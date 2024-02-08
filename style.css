@@ -131,14 +131,11 @@ h2{
     text-align: center;
 }
 
-@media screen and (max-width:480px){
-    .texto-usuario{
-        width: auto;
-        border: 1px solid black;
-    }
-
-    .resultado{
-        width: 80px;
-    };
+.botones{
+    display: flex;
+    margin: 340px 0 0 200px;
+    gap: 2em;
+    width: 400px;
+    height: 40px;
+    
 }
-
