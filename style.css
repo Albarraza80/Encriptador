@@ -1,3 +1,12 @@
+
+body{
+    background: linear-gradient(#F3F5FC 0%, #EFF1FA 33.33%, #E9ECF8 66.67%, #AAB2D5 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    /*border: 1px solid black;*/
+}
+
 body::before {
     background-image: url("Dibujos/Muñeco20.png");
     background-position: right;
@@ -9,17 +18,9 @@ body::before {
     opacity: 0.1;
 }
 
-body{
-    background: linear-gradient(#F3F5FC 0%, #EFF1FA 33.33%, #E9ECF8 66.67%, #AAB2D5 100%);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    /*border: 1px solid black;*/
-}
+
 
 .contenedor-principal{
-    
-   
     display: flex;
     width: 940px;
     height: 600px;
@@ -132,11 +133,12 @@ h2{
 }
 
 .botones{
+    position: absolute;
     display: flex;
     margin: 340px 0 0 140px;
     gap: 2em;
     width: 400px;
-    height: 40px;
+    height: 60px;
     
 }
 
