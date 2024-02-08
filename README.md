@@ -4,4 +4,4 @@
   
 - Esta es una actualización del readme
 
-- Realizada 80% de la extructuta del programa
+- Realizada 80% de la estructuta del programa
