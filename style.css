@@ -156,6 +156,7 @@ h2{
     /*font-weight: bold;*/
     font-size: 15px;
     font-family: 'Inder', sans-serif;
+    transition: 400ms;
 }
 
 .boton-desencriptar{
@@ -169,22 +170,39 @@ h2{
     /*font-weight: bold;*/
     font-size: 15px;
     font-family: 'Inder', sans-serif;
+    transition: 400ms;
 }
 
 .boton-copiar{
     position: absolute;
-    margin: 80px 0 0 50px;
+    margin: 80px 0 0 70px;
 }
 
 .copiar{
     display: block;
     background-color: #D8DFE8;
-    width: 190px;
-    height: 50px;
+    width: 150px;
+    height: 40px;
     border-radius: 10px;
     color: #0A3871;
     border: 2px solid black;
     /*font-weight: bold;*/
     font-size: 15px;
     font-family: 'Inder', sans-serif;
+    transition: 400ms;
+}
+
+.boton-encriptar:hover{
+    border-color: #0A3871;
+    transform: scale(1.04);
+}
+
+.boton-desencriptar:hover{
+    border-color: #0A3871;
+    transform: scale(1.04);
+}
+
+.copiar:hover{
+    border-color: #0A3871;
+    transform: scale(1.04);
 }
