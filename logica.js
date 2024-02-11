@@ -2,27 +2,28 @@
 condicionesIniciales();
 
 function condicionesIniciales(){
-    ocultar( "textoEncriptado", true );
-    ocultar( "muneco", false );
-    ocultar( "texto-ningun", false );
-    ocultar( "boton-copiar", true );
+    mostrar( "muneco", true );
+    mostrar( "texto-ningun", true );
+    mostrar( "textoEncriptado", false );
+    mostrar( "boton-copiar", false );
 }
 
 function condicionesEncriptado(){
-    ocultar( "textoEncriptado", false );
-    ocultar( "muneco", true );
-    ocultar( "texto-ningun", true );
-    ocultar( "boton-copiar", false );
+    mostrar( "muneco", false );
+    mostrar( "texto-ningun", false );
+    mostrar( "textoEncriptado", true );
+    mostrar( "boton-copiar", true );
 }
 
 function encriptador(){
     let escrito = [];
     let encriptado = [];
 
+    condicionesEncriptado();
     escrito = document.getElementById( "textoUsuario" ).value;
     encriptado = encriptar( escrito );
-    condicionesEncriptado();
-    alert( encriptado );
+    asignarTextoElemento("textoEncriptado", encriptado)
+    /*alert( 'encriptado' );*/
 }
 
 function encriptar( textoUsuario ){
@@ -53,12 +54,26 @@ function encriptar( textoUsuario ){
                 break;
         }
     }
-    return(encriptado);
+    return( encriptado );
 }
 
-function ocultar(id, estado){
-    if(estado == true){
-        var elemento = document.getElementById(id);
+function mostrar( id, estado ){
+    let elemento = false;
+
+    if( estado == false ){
+        elemento = document.getElementById(id);
         elemento.style.display = "none";
     }
+    else{
+        if( estado == true ){
+            elemento = document.getElementById(id);
+            elemento.style.display = "";
+        }
+    }
+}
+
+function asignarTextoElemento(elemento, texto) {
+    let elementoHTML = document.getElementById(elemento);
+    elementoHTML.innerHTML = texto;
+    return;
 }
