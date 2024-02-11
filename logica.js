@@ -133,6 +133,7 @@ const copia = document.querySelector(".copiado");
     var contenido = document.querySelector(".textoEncriptado").textContent;
     navigator.clipboard.writeText(contenido);
     console.log("hola"); 
+    condicionesIniciales();
 });
 
 /*function botonCopiar(){
