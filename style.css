@@ -164,7 +164,8 @@ body::before {
     font-size: 20px;
     font-family: 'Inder', sans-serif;
     color: #0A3871;
-    padding: 20px;
+    padding: 25px 15px 0 20px;
+    height: 445px;
 }
 
 h1{
@@ -185,7 +186,7 @@ h2{
 
 .boton-copiar{
     position: absolute;
-    margin: 80px 0 0 70px;
+    margin: 10px 0 0 70px;
 }
 
 .copiar{
