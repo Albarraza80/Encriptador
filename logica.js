@@ -1,5 +1,5 @@
-let textoNingun = document.querySelector("h1");
-textoNingun.innerHTML = "Ningún mensaje fue encontrado"; 
+/*let textoNingun = document.querySelector("h1");
+textoNingun.innerHTML = "Ningún mensaje fue encontrado"; */
 
 function ocultar(id, estado){
     if(estado == true){
