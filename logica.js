@@ -128,9 +128,13 @@ function limpiarCaja( clase ) {
     document.getElementById( clase ).value = '';
 }
 
-const copia = document.querySelector(".copiar"); 
-    copia.addEventListener("click", copia = () => {
+const copia = document.querySelector(".copiado"); 
+    copia.addEventListener("click", copiar = () => {
     var contenido = document.querySelector(".textoEncriptado").textContent;
     navigator.clipboard.writeText(contenido);
     console.log("hola"); 
 });
+
+/*function botonCopiar(){
+    document.getElementById( "textoEncriptado" ).innerHTML = "";
+}*/

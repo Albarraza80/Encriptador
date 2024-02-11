@@ -186,10 +186,10 @@ h2{
 
 .boton-copiar{
     position: absolute;
-    margin: 10px 0 0 90px;
+    margin: 10px 0 0 95px;
 }
 
-.copiar{
+.copiado{
     display: block;
     background-color: #D8DFE8;
     width: 150px;
@@ -202,7 +202,7 @@ h2{
     transition: 400ms;
 }
 
-.copiar:hover{
+.copiado:hover{
     border-color: #0A3871;
     transform: scale(1.04);
 }
