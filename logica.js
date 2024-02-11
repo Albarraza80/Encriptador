@@ -1,4 +1,3 @@
-
 condicionesIniciales();
 
 function condicionesIniciales(){
@@ -32,8 +31,8 @@ function desencriptador(){
 
     escrito = document.getElementById( "textoUsuario" ).value;
     desencriptado = desencriptar( escrito );
-    asignarTextoElemento("textoEncriptado", "");
-    asignarTextoElemento("textoEncriptado", desencriptado);
+    asignarTextoElemento( "textoEncriptado", "" );
+    asignarTextoElemento( "textoEncriptado", desencriptado );
     condicionesEncriptado();
 }
 
@@ -128,3 +127,10 @@ function asignarTextoElemento(elemento, texto) {
 function limpiarCaja( clase ) {
     document.getElementById( clase ).value = '';
 }
+
+const copia = document.querySelector(".copiar"); 
+    copia.addEventListener("click", copia = () => {
+    var contenido = document.querySelector(".textoEncriptado").textContent;
+    navigator.clipboard.writeText(contenido);
+    console.log("hola"); 
+});
