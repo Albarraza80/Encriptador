@@ -13,17 +13,64 @@ function condicionesEncriptado(){
     mostrar( "texto-ningun", false );
     mostrar( "textoEncriptado", true );
     mostrar( "boton-copiar", true );
+    limpiarCaja( "textoUsuario" );
 }
 
 function encriptador(){
     let escrito = [];
     let encriptado = [];
 
-    condicionesEncriptado();
     escrito = document.getElementById( "textoUsuario" ).value;
     encriptado = encriptar( escrito );
-    asignarTextoElemento("textoEncriptado", encriptado)
-    /*alert( 'encriptado' );*/
+    asignarTextoElemento( "textoEncriptado", encriptado );
+    condicionesEncriptado();
+}
+
+function desencriptador(){
+    let escrito = [];
+    let desencriptado = [];
+
+    escrito = document.getElementById( "textoUsuario" ).value;
+    desencriptado = desencriptar( escrito );
+    asignarTextoElemento("textoEncriptado", "");
+    asignarTextoElemento("textoEncriptado", desencriptado);
+    condicionesEncriptado();
+}
+
+function desencriptar( textoUsuario ){
+    let desencriptado = [];
+    let tamano = 0;
+
+    tamano = textoUsuario.length;
+
+    for( let i = 0; i < tamano; i++ ){
+        switch (textoUsuario[ i ]){
+            case 'a':
+                desencriptado += 'a'
+                i += 1;
+                break;
+            case 'e':
+                desencriptado += 'e'
+                i += 4;
+                break;
+            case 'i':
+                desencriptado += 'i'
+                i += 3;
+                break;
+            case 'o':
+                desencriptado += 'o'
+                i += 3;
+                break;
+            case 'u':
+                desencriptado += 'u'
+                i += 3;
+                break;
+            default:
+                desencriptado += textoUsuario[ i ];
+                break;
+        }
+    }
+    return( desencriptado );
 }
 
 function encriptar( textoUsuario ){
@@ -76,4 +123,8 @@ function asignarTextoElemento(elemento, texto) {
     let elementoHTML = document.getElementById(elemento);
     elementoHTML.innerHTML = texto;
     return;
+}
+
+function limpiarCaja( clase ) {
+    document.getElementById( clase ).value = '';
 }
