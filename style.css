@@ -160,6 +160,12 @@ body::before {
     float: left;
     margin: 100px 0 0 30px;
 }
+.textoEncriptado{
+    font-size: 20px;
+    font-family: 'Inder', sans-serif;
+    color: #0A3871;
+    padding: 20px;
+}
 
 h1{
     text-align: center;
