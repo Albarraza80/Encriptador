@@ -2,19 +2,31 @@
 condicionesIniciales();
 
 function condicionesIniciales(){
-    ocultar("textoEncriptado", true);
-    ocultar("muneco", true);
-    ocultar("texto-ningun", true);
-    ocultar("boton-copiar", true);
+    ocultar( "textoEncriptado", true );
+    ocultar( "muneco", false );
+    ocultar( "texto-ningun", false );
+    ocultar( "boton-copiar", true );
+}
+
+function condicionesEncriptado(){
+    ocultar( "textoEncriptado", false );
+    ocultar( "muneco", true );
+    ocultar( "texto-ningun", true );
+    ocultar( "boton-copiar", false );
 }
 
 function encriptador(){
+    let escrito = [];
+    let encriptado = [];
 
+    escrito = document.getElementById( "textoUsuario" ).value;
+    encriptado = encriptar( escrito );
+    condicionesEncriptado();
+    alert( encriptado );
 }
 
 function encriptar( textoUsuario ){
     let encriptado = [];
-    let textoUsuario = [];
     let tamano = 0;
 
     tamano = textoUsuario.length;
@@ -41,7 +53,6 @@ function encriptar( textoUsuario ){
                 break;
         }
     }
-    alert(encriptado);
     return(encriptado);
 }
 
