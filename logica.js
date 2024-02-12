@@ -27,7 +27,7 @@ function encriptador(){
         condicionesEncriptado();
     } 
     else{
-        alert('Solo se admiten letras minúscula y sin acento \nfavor veririque que cumpla con lo indicado');
+        alert('Solo se admiten letras minúscula y sin acento \nfavor verique que cumpla con lo indicado');
         condicionesIniciales();
     }
 }
