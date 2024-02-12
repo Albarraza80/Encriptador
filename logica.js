@@ -5,6 +5,7 @@ function condicionesIniciales(){
     mostrar( "texto-ningun", true );
     mostrar( "textoEncriptado", false );
     mostrar( "boton-copiar", false );
+    /*limpiarCaja( "textoUsuario" );*/
 }
 
 function condicionesEncriptado(){
@@ -20,9 +21,15 @@ function encriptador(){
     let encriptado = [];
 
     escrito = document.getElementById( "textoUsuario" ).value;
-    encriptado = encriptar( escrito );
-    asignarTextoElemento( "textoEncriptado", encriptado );
-    condicionesEncriptado();
+   if( verificarCaracteresEspeciales( escrito ) ){
+        encriptado = encriptar( escrito );
+        asignarTextoElemento( "textoEncriptado", encriptado );
+        condicionesEncriptado();
+    } 
+    else{
+        alert('Solo se admiten letras minúscula y sin acento \nfavor veririque que cumpla con lo indicado');
+        condicionesIniciales();
+    }
 }
 
 function desencriptador(){
@@ -136,6 +143,26 @@ const copia = document.querySelector(".copiado");
     condicionesIniciales();
 });
 
-/*function botonCopiar(){
-    document.getElementById( "textoEncriptado" ).innerHTML = "";
-}*/
+function verificarCaracteresEspeciales( texto ){
+    let verificar = 0;
+    let conTilde = true;
+
+    let tildea = texto.includes('á');
+    let tildee = texto.includes('é');
+    let tildei = texto.includes('í');
+    let tildeo = texto.includes('ó');
+    let tildeu = texto.includes('ú');
+
+    if (tildea || tildee || tildei || tildeo || tildeu){
+        conTilde = false;
+    }
+
+    if( texto === texto.toLowerCase() && conTilde ){
+        verificar = true;
+    }
+    else{
+        verificar = false;
+    }
+
+    return( verificar );
+}

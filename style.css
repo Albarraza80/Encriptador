@@ -206,3 +206,13 @@ h2{
     border-color: #0A3871;
     transform: scale(1.04);
 }
+
+.copyright{
+    display: flex;
+    position: absolute;
+    color:#0A3871;
+    font-size: 11px;
+    margin: 320px 0 0 150px;
+    font-family: 'Inder', sans-serif;
+    /*margin:20px;*/
+}    
