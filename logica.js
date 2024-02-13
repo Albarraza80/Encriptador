@@ -21,7 +21,8 @@ function encriptador(){
     let encriptado = [];
 
     escrito = document.getElementById( "textoUsuario" ).value;
-   if( verificarCaracteresEspeciales( escrito ) ){
+
+    if( verificarCaracteresEspeciales( escrito ) ){
         encriptado = encriptar( escrito );
         asignarTextoElemento( "textoEncriptado", encriptado );
         condicionesEncriptado();
@@ -44,69 +45,26 @@ function desencriptador(){
 }
 
 function desencriptar( textoUsuario ){
-    let desencriptado = [];
-    let tamano = 0;
+    let desencriptado = "";
 
-    tamano = textoUsuario.length;
+    desencriptado = textoUsuario.replaceAll( "ufat", "u" );
+    desencriptado = desencriptado.replaceAll( "ai", "a" );
+    desencriptado = desencriptado.replaceAll( "imes", "i" );
+    desencriptado = desencriptado.replaceAll( "ober", "o" );
+    desencriptado = desencriptado.replaceAll( "enter", "e" );    
 
-    for( let i = 0; i < tamano; i++ ){
-        switch (textoUsuario[ i ]){
-            case 'a':
-                desencriptado += 'a'
-                i += 1;
-                break;
-            case 'e':
-                desencriptado += 'e'
-                i += 4;
-                break;
-            case 'i':
-                desencriptado += 'i'
-                i += 3;
-                break;
-            case 'o':
-                desencriptado += 'o'
-                i += 3;
-                break;
-            case 'u':
-                desencriptado += 'u'
-                i += 3;
-                break;
-            default:
-                desencriptado += textoUsuario[ i ];
-                break;
-        }
-    }
     return( desencriptado );
 }
 
 function encriptar( textoUsuario ){
-    let encriptado = [];
-    let tamano = 0;
+    let encriptado = "";
 
-    tamano = textoUsuario.length;
+    encriptado = textoUsuario.replaceAll( "e", "enter" );    
+    encriptado = encriptado.replaceAll( "i", "imes" );
+    encriptado = encriptado.replaceAll( "a", "ai" );
+    encriptado = encriptado.replaceAll( "u", "ufat" );
+    encriptado = encriptado.replaceAll( "o", "ober" );
 
-    for( let i = 0; i < tamano; i++ ){
-        switch (textoUsuario[ i ]){
-            case 'a':
-                encriptado += textoUsuario[ i ].replace( 'a', 'ai' );
-                break;
-            case 'e':
-                encriptado += textoUsuario[ i ].replace( 'e', 'enter' );
-                break;
-            case 'i':
-                encriptado += textoUsuario[ i ].replace( 'i', 'imes' );
-                break;
-            case 'o':
-                encriptado += textoUsuario[ i ].replace( 'o', 'ober' );
-                break;
-            case 'u':
-                encriptado += textoUsuario[ i ].replace( 'u', 'ufat' );
-                break;
-            default:
-                encriptado += textoUsuario[ i ];
-                break;
-        }
-    }
     return( encriptado );
 }
 
@@ -145,7 +103,7 @@ const copia = document.querySelector(".copiado");
 
 function verificarCaracteresEspeciales( texto ){
     let verificar = 0;
-    let conTilde = true;
+    let sinTilde = true;
 
     let tildea = texto.includes('á');
     let tildee = texto.includes('é');
@@ -154,10 +112,10 @@ function verificarCaracteresEspeciales( texto ){
     let tildeu = texto.includes('ú');
 
     if (tildea || tildee || tildei || tildeo || tildeu){
-        conTilde = false;
+        sinTilde = false;
     }
 
-    if( texto === texto.toLowerCase() && conTilde ){
+    if( texto === texto.toLowerCase() && sinTilde ){
         verificar = true;
     }
     else{
