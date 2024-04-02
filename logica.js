@@ -54,12 +54,6 @@ function desencriptar( textoUsuario ){
         }
     }
 
-    /*desencriptado = textoUsuario.replaceAll( "ufat", "u" );
-    desencriptado = desencriptado.replaceAll( "ai", "a" );
-    desencriptado = desencriptado.replaceAll( "imes", "i" );
-    desencriptado = desencriptado.replaceAll( "ober", "o" );
-    desencriptado = desencriptado.replaceAll( "enter", "e" );*/
-
     return( textoUsuario );
 }
 
@@ -71,12 +65,6 @@ function encriptar( textoUsuario ){
             textoUsuario = textoUsuario.replaceAll( matrizLlaves[ 0 ] [ i ], matrizLlaves[ 1 ] [ i ] );
         }
     }
-
-    /*encriptado = textoUsuario.replaceAll( "e", "enter" );    
-    encriptado = encriptado.replaceAll( "i", "imes" );
-    encriptado = encriptado.replaceAll( "a", "ai" );
-    encriptado = encriptado.replaceAll( "u", "ufat" );
-    encriptado = encriptado.replaceAll( "o", "ober" );*/
 
     return( textoUsuario );
 }
@@ -118,14 +106,13 @@ function verificarCaracteresEspeciales( texto ){
     let verificar = 0;
     let sinTilde = true;
 
-    let tildea = texto.includes('á');
-    let tildee = texto.includes('é');
-    let tildei = texto.includes('í');
-    let tildeo = texto.includes('ó');
-    let tildeu = texto.includes('ú');
-
-    if (tildea || tildee || tildei || tildeo || tildeu){
-        sinTilde = false;
+    let caracteresEspeciales = [ "á", "é", "í", "ó", "ú" ];
+    
+    for( i = 0; i < caracteresEspeciales.length; i++ ){
+        if( texto.includes( caracteresEspeciales[ i ] ) ){
+            sinTilde = false;
+            break;
+        }
     }
 
     if( texto === texto.toLowerCase() && sinTilde ){
