@@ -45,21 +45,22 @@ function desencriptador(){
 }
 
 function desencriptar( textoUsuario ){
-   /* let matrizLlaves = [ [ "ufat", "u" ], [ "ai", "a" ], [ "imes", "i" ], [ "ober", "o" ], [ "enter", "e" ] ];
+    let matrizLlaves = [ [ "ufat", "u" ], [ "ai", "a" ], [ "imes", "i" ], [ "ober", "o" ], [ "enter", "e" ] ];
 
     for( let i = 0; i < matrizLlaves.length; i++ ){
-        if( textoUsuario.includes( [ i ][ 0 ] ) ){
+
+        if( textoUsuario.includes( matrizLlaves[ i ][ 0 ] ) ){
             textoUsuario = textoUsuario.replaceAll( matrizLlaves[ i ][ 0 ], matrizLlaves[ i ][ 1 ] );
         }
-    }   */
+    }
 
-    desencriptado = textoUsuario.replaceAll( "ufat", "u" );
+    /*desencriptado = textoUsuario.replaceAll( "ufat", "u" );
     desencriptado = desencriptado.replaceAll( "ai", "a" );
     desencriptado = desencriptado.replaceAll( "imes", "i" );
     desencriptado = desencriptado.replaceAll( "ober", "o" );
-    desencriptado = desencriptado.replaceAll( "enter", "e" );
+    desencriptado = desencriptado.replaceAll( "enter", "e" );*/
 
-    return( desencriptado );
+    return( textoUsuario );
 }
 
 function encriptar( textoUsuario ){
