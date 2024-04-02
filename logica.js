@@ -45,27 +45,39 @@ function desencriptador(){
 }
 
 function desencriptar( textoUsuario ){
-    let desencriptado = "";
+   /* let matrizLlaves = [ [ "ufat", "u" ], [ "ai", "a" ], [ "imes", "i" ], [ "ober", "o" ], [ "enter", "e" ] ];
+
+    for( let i = 0; i < matrizLlaves.length; i++ ){
+        if( textoUsuario.includes( [ i ][ 0 ] ) ){
+            textoUsuario = textoUsuario.replaceAll( matrizLlaves[ i ][ 0 ], matrizLlaves[ i ][ 1 ] );
+        }
+    }   */
 
     desencriptado = textoUsuario.replaceAll( "ufat", "u" );
     desencriptado = desencriptado.replaceAll( "ai", "a" );
     desencriptado = desencriptado.replaceAll( "imes", "i" );
     desencriptado = desencriptado.replaceAll( "ober", "o" );
-    desencriptado = desencriptado.replaceAll( "enter", "e" );    
+    desencriptado = desencriptado.replaceAll( "enter", "e" );
 
     return( desencriptado );
 }
 
 function encriptar( textoUsuario ){
-    let encriptado = "";
+    let matrizLlaves = [ ["e", "i", "a", "o", "u"], ["enter", "imes", "ai", "ober", "ufat"] ];
 
-    encriptado = textoUsuario.replaceAll( "e", "enter" );    
+    for( let i = 0; i < matrizLlaves[ 0 ].length; i++ ){
+        if( textoUsuario.includes( matrizLlaves[ 0 ] [ i ] ) ){
+            textoUsuario = textoUsuario.replaceAll( matrizLlaves[ 0 ] [ i ], matrizLlaves[ 1 ] [ i ] );
+        }
+    }
+
+    /*encriptado = textoUsuario.replaceAll( "e", "enter" );    
     encriptado = encriptado.replaceAll( "i", "imes" );
     encriptado = encriptado.replaceAll( "a", "ai" );
     encriptado = encriptado.replaceAll( "u", "ufat" );
-    encriptado = encriptado.replaceAll( "o", "ober" );
+    encriptado = encriptado.replaceAll( "o", "ober" );*/
 
-    return( encriptado );
+    return( textoUsuario );
 }
 
 function mostrar( id, estado ){
